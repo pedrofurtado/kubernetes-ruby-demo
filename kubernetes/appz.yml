@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-appz-deployment
+  namespace: default
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      demo-app: z
+  template:
+    metadata:
+      labels:
+        demo-app: z
+    spec:
+      containers:
+      - name: demo-appz-site
+        image: pedrofurtado/kubernetes-ruby-demo-appz:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-appz-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    demo-app: z
+  ports:
+  - port: 3003
+    targetPort: 3000
+    nodePort: 30003

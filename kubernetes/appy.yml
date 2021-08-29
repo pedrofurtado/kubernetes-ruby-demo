@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-appy-deployment
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      demo-app: 'y'
+  template:
+    metadata:
+      labels:
+        demo-app: 'y'
+    spec:
+      containers:
+      - name: demo-appy-site
+        image: pedrofurtado/kubernetes-ruby-demo-appy:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-appy-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    demo-app: 'y'
+  ports:
+  - port: 3002
+    targetPort: 3000
+    nodePort: 30002

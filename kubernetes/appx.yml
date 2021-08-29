@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-appx-deployment
+  namespace: default
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      demo-app: x
+  template:
+    metadata:
+      labels:
+        demo-app: x
+    spec:
+      containers:
+      - name: demo-appx-site
+        image: pedrofurtado/kubernetes-ruby-demo-appx:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-appx-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    demo-app: x
+  ports:
+  - port: 3001
+    targetPort: 3000
+    nodePort: 30001
