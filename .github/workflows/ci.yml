@@ -26,7 +26,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./appX/
+          context: ./appX
           file: ./appX/Dockerfile
           push: true
           tags: pedrofurtado/kubernetes-ruby-demo-appx:latest
