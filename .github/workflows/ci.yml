@@ -25,7 +25,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push - AppX
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./appX
@@ -34,7 +33,6 @@ jobs:
           tags: pedrofurtado/kubernetes-ruby-demo-appx:latest
       -
         name: Build and push - AppY
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./appY
@@ -43,7 +41,6 @@ jobs:
           tags: pedrofurtado/kubernetes-ruby-demo-appy:latest
       -
         name: Build and push - AppZ
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./appZ
