@@ -4,7 +4,7 @@ metadata:
   name: demo-appx-deployment
   namespace: default
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       demo-app: x
@@ -27,5 +27,5 @@ spec:
   selector:
     demo-app: x
   ports:
-  - port: 3001
+  - port: 80
     targetPort: 3000
