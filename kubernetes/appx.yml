@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: demo-appx-deployment
   namespace: default
+  labels:
+    demo-app: x
 spec:
   replicas: 3
   selector:
