@@ -1,0 +1,2 @@
+https://docs.microsoft.com/en-us/azure/aks/kubernetes-action#clean-up-resources
+https://docs.github.com/en/actions/guides/deploying-to-google-kubernetes-engine
