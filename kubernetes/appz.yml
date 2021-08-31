@@ -23,8 +23,9 @@ metadata:
   name: demo-appz-service
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     demo-app: z
   ports:
-  - port: 3003
+  - port: 80
     targetPort: 3000
