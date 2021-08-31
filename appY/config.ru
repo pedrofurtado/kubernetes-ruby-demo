@@ -1,5 +1,5 @@
 def generate_html_with(e)
-  version  = '3.0.0'
+  version  = '3.1.0'
   hostname = `cat /etc/hostname`
 
   StringIO.new <<-HTML
