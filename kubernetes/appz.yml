@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: demo-appz-deployment
   namespace: default
+  labels:
+    demo-app: z
 spec:
   replicas: 5
   selector:
