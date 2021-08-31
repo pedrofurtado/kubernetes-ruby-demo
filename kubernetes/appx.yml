@@ -4,7 +4,7 @@ metadata:
   name: demo-appx-deployment
   namespace: default
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       demo-app: x
@@ -23,6 +23,7 @@ metadata:
   name: demo-appx-service
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     demo-app: x
   ports:
