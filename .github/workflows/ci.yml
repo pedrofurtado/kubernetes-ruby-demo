@@ -74,5 +74,5 @@ jobs:
       uses: azure/k8s-deploy@v1
       with:
         manifests: |
-          kubernetes/azure.yml
+          kubernetes/ingress.yml
         namespace: ${{ env.NAMESPACE }}
