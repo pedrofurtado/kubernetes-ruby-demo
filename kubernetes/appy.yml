@@ -23,8 +23,9 @@ metadata:
   name: demo-appy-service
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     demo-app: 'y'
   ports:
-  - port: 3002
+  - port: 80
     targetPort: 3000
