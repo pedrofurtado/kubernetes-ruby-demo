@@ -23,10 +23,8 @@ metadata:
   name: demo-appz-service
   namespace: default
 spec:
-  type: NodePort
   selector:
     demo-app: z
   ports:
   - port: 3003
     targetPort: 3000
-    nodePort: 30003

@@ -23,10 +23,8 @@ metadata:
   name: demo-appy-service
   namespace: default
 spec:
-  type: NodePort
   selector:
     demo-app: 'y'
   ports:
   - port: 3002
     targetPort: 3000
-    nodePort: 30002

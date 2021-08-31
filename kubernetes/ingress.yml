@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: demo-app-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
@@ -15,3 +13,23 @@ spec:
             name: demo-appx-service
             port:
               number: 3001
+
+  - http:
+      paths:
+      - path: /appy
+        pathType: Prefix
+        backend:
+          service:
+            name: demo-appy-service
+            port:
+              number: 3002
+
+  - http:
+      paths:
+      - path: /appz
+        pathType: Prefix
+        backend:
+          service:
+            name: demo-appz-service
+            port:
+              number: 3003
