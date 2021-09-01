@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: demo-appy-site
-        image: pedrofurtado/kubernetes-ruby-demo-appy:latest
+        image: pedrofurtado/kubernetes-ruby-demo-appy
 ---
 apiVersion: v1
 kind: Service

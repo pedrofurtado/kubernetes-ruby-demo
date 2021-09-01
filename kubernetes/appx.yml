@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: demo-appx-site
-        image: pedrofurtado/kubernetes-ruby-demo-appx:latest
+        image: pedrofurtado/kubernetes-ruby-demo-appx
 ---
 apiVersion: v1
 kind: Service
