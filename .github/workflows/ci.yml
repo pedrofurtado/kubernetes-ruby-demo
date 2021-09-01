@@ -46,6 +46,11 @@ jobs:
         tags: 'pedrofurtado/kubernetes-ruby-demo-appx:${{ github.sha }}'
 
     -
+        name: Clear docker cache
+        run: |
+          rm -Rf /tmp/.buildx-cache
+
+    -
       name: Build and push docker image - AppY
       uses: docker/build-push-action@v2
       with:
@@ -56,6 +61,11 @@ jobs:
         tags: 'pedrofurtado/kubernetes-ruby-demo-appy:${{ github.sha }}'
 
     -
+        name: Clear docker cache
+        run: |
+          rm -Rf /tmp/.buildx-cache
+
+    -
       name: Build and push docker image - AppZ
       uses: docker/build-push-action@v2
       with:
@@ -64,6 +74,11 @@ jobs:
         file: ./appZ/Dockerfile
         push: true
         tags: 'pedrofurtado/kubernetes-ruby-demo-appz:${{ github.sha }}'
+
+    -
+        name: Clear docker cache
+        run: |
+          rm -Rf /tmp/.buildx-cache
 
     - 
       name: Azure AKS - Set context
