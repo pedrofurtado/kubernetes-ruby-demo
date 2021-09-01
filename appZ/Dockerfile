@@ -1,4 +1,4 @@
-FROM ruby:2.6.0
+FROM ruby:2.7.1
 EXPOSE 3000
 WORKDIR /app
 COPY . .
