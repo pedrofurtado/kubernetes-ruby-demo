@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-appx-deployment
+  labels:
+    app: appx
+spec:
+  replicas: 9
+  selector:
+    matchLabels:
+      app: appx
+  template:
+    metadata:
+      labels:
+        app: appx
+    spec:
+      containers:
+      - name: demo-appx-site
+        image: 'pedrofurtado/kubernetes-ruby-demo-appx:f85e5140dabd228041a9c275cc63a30372d77cf6'
+        ports:
+        - containerPort: 3000
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: demo-appx-deployment-canary
+#   labels:
+#     app: appx
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: appx
+#   template:
+#     metadata:
+#       labels:
+#         app: appx
+#     spec:
+#       containers:
+#       - name: demo-appx-site-canary
+#         image: 'pedrofurtado/kubernetes-ruby-demo-appy:f85e5140dabd228041a9c275cc63a30372d77cf6'
+#         ports:
+#         - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-appx-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: appx
+  ports:
+  - port: 80
+    targetPort: 3000
