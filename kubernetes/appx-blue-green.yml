@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: demo-appx-site-green
-        image: 'pedrofurtado/kubernetes-ruby-demo-appx:f85e5140dabd228041a9c275cc63a30372d77cf6'
+        image: 'pedrofurtado/kubernetes-ruby-demo-appy:f85e5140dabd228041a9c275cc63a30372d77cf6'
         ports:
         - containerPort: 3000
 ---
